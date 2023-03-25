@@ -1,0 +1,266 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 12;
+  padding: 15px 0 5px 0;
+}
+.header .smallmenu {
+  display: none;
+}
+.header .logo {
+  width: 20%;
+  height: 60px;
+  float: left;
+  transition-duration: 0.1s;
+}
+.header .logo img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  animation: example 5s infinite ease-in-out;
+}
+@keyframes example {
+  35%, 100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: rotateX(360deg) scale(1.15);
+  }
+}
+.header .content {
+  width: 80%;
+  float: left;
+}
+.header .content .search-header {
+  float: left;
+  width: 70%;
+}
+.header .content .search-header form.input-search {
+  border-radius: 15px;
+  height: 35px;
+  width: 90%;
+  box-shadow: 0 4px 6px #ccc;
+  display: flex;
+  margin: auto;
+}
+.header .content .search-header form.input-search input {
+  float: left;
+  padding-left: 15px;
+  border: none;
+  font-weight: 700;
+  border-radius: 10px 0 0 10px;
+  height: 100%;
+  width: calc(100% - 100px - 20px);
+}
+.header .content .search-header form.input-search button {
+  border-left: 1px solid #ccc;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 10px;
+  color: #888;
+  background: none;
+  width: 100px;
+  height: 100%;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.header .content .search-header form.input-search button:hover {
+  color: #000;
+}
+.header .content .search-header form.input-search .autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.header .content .search-header form.input-search .autocomplete .autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.header .content .search-header form.input-search .autocomplete .autocomplete-items .autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.header .content .search-header form.input-search .autocomplete .autocomplete-items .autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.header .content .search-header form.input-search .autocomplete .autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+.header .content .search-header .tags {
+  margin: 5px 0 0 20px;
+  font-size: 13px;
+}
+.header .content .search-header .tags a {
+  color: gray;
+  padding: 0 5px;
+}
+.header .content .search-header .tags a:hover {
+  color: black;
+  text-decoration: underline;
+}
+.header .content .tools-member {
+  float: right;
+  display: table;
+  font-size: 14px;
+  width: 30%;
+}
+.header .content .tools-member a {
+  position: relative;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #565;
+  cursor: pointer;
+}
+.header .content .tools-member a:hover {
+  font-size: 20px;
+}
+.header .content .tools-member a:hover > i {
+  color: #00483e;
+  font-size: 20px;
+}
+.header .content .tools-member i {
+  /* icon */
+  padding: 10px;
+  color: #000;
+  transition: 0.2s;
+  font-size: 16px;
+}
+.header .content .tools-member i .fa-user {
+  padding: 10px 12.5px;
+}
+.header .content .tools-member i .fa-shopping-cart {
+  padding: 10px 11px;
+}
+.header .content .tools-member .member {
+  position: relative;
+  float: left;
+  display: table-cell;
+}
+.header .content .tools-member .member .menuMember {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #eee;
+  min-width: 170px;
+  transition-duration: 0.15s;
+  transform: translateX(-40%) scale(0);
+}
+.header .content .tools-member .member .menuMember a {
+  display: block;
+  padding: 10px 0;
+}
+.header .content .tools-member .member .menuMember a:hover {
+  background-color: #888;
+  color: #eee;
+}
+.header .content .tools-member .member .hide {
+  display: none;
+}
+.header .content .tools-member .member:hover > .menuMember {
+  z-index: 20;
+  transform: translateX(-40%) scale(1);
+}
+.header .content .tools-member .cart {
+  float: left;
+  margin: 0 15px;
+  padding-left: 5px;
+  border-left: 1px solid #bbb;
+}
+.header .content .tools-member .cart .cart-number {
+  position: absolute;
+  left: 1.4em;
+  bottom: -1em;
+  font-weight: bold;
+  font-size: 1em;
+  color: red;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+.header .content .tools-member .cart .cart-number {
+  transition-duration: 0.4s;
+}
+
+@media only screen and (max-width: 768px) {
+  .header .smallmenu {
+    display: block;
+    float: left;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  .header .logo {
+    float: none;
+    width: 40%;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .header .content {
+    float: none;
+    width: 100%;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.05s ease-out;
+  }
+  .header .content .search-header {
+    float: none;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .header .content .search-header form.input-search {
+    float: none;
+    width: 97%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .header .content .search-header form.input-search .input-search input {
+    padding-left: 5px;
+    width: calc(100% - 100px - 5px);
+  }
+  .header .content .search-header .tags {
+    width: 100%;
+    margin: 5px 0 0 0;
+    text-align: center;
+  }
+  .header .content .tools-member {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .header .content .tools-member .member, .header .content .tools-member .cart {
+    float: left;
+    width: 50%;
+    height: 35px;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+  }
+  .header .content .tools-member .member:hover > .menuMember {
+    transform: translateX(0%) scale(1);
+    width: 90%;
+  }
+}/*# sourceMappingURL=header.css.map */
